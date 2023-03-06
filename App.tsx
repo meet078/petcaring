@@ -5,19 +5,19 @@ import Home from './component/Home';
 import AppBar from './component/utils/AppBar';
 import AppContext from './context/AppContext';
 import AppState from './context/AppState';
+import RootStack from './navigation/types';
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
   const appState = useContext(AppContext);
   return (
     <AppState>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='home' >
-          <Stack.Screen name="home" component={Home} options={{
+        <RootStack.Navigator initialRouteName='home' >
+          <RootStack.Screen name="home" component={Home} options={{
             header: ({ navigation, route, options, back }) => (<AppBar title='' actionbuttons={[{ icon: "search" }, { icon: appState?.signIn ? "person" : "login" }]} />
-
             )
           }} />
-        </Stack.Navigator>
+        </RootStack.Navigator>
       </NavigationContainer>
     </AppState>
   );

@@ -7,3 +7,4 @@ const SignIn = ({ }): JSX.Element => {
 
     </View>
 }
+export default SignIn;

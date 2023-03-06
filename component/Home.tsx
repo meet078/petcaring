@@ -2,8 +2,9 @@ import { View } from "react-native";
 import { petorganization, species } from "../interface/Data";
 import Organizaton from "./home/Organization";
 import Species from "./home/Species";
-import AppBar from "./utils/AppBar";
 import Slider from "./utils/Slider";
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from "../App";
 
 const imageList: { id: number, url: string }[] = [
     { id: 1, url: "https://images.unsplash.com/photo-1598214886806-c87b84b7078b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGltYWdlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" },
@@ -32,7 +33,8 @@ const listHeaderComponent = (
         <Slider images={imageList} />
     </View >
 )
-const Home = (): JSX.Element =>
+type props = NativeStackScreenProps<RootStackParamList, "home">;
+const Home = ({route, navigation}: props): JSX.Element =>
     <View>
         <Organizaton listHeaderComponent={listHeaderComponent} petorganizationdata={petorganiztiondata} />
     </View>

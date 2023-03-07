@@ -8,7 +8,10 @@ export const { appbar, appbarTitle , appbarMenu} = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 5,
         // add shadow
-        elevation: 1,
+        backgroundColor: "white",
+        shadowOpacity: 0.4,
+        shadowRadius: 5,
+        elevation: 5,
         // set layout and align child item
         flexDirection: "row",
         justifyContent: "space-between",

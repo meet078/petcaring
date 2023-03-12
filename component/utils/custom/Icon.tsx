@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { ColorValue, StyleProp, Text, TextStyle, View } from "react-native";
+import { ColorValue, StyleProp, TextStyle } from "react-native";
+import Text from "./Text";
 export interface IconProps {
     value: string,
     size?: Number,
@@ -8,11 +9,10 @@ export interface IconProps {
     style?: StyleProp<TextStyle>
 }
 
-const Icon: FC<IconProps> = ({ value, size, color, outlined, style }) => {
+const Icon: FC<IconProps> = ({ value, size, outlined, style }) => {
     let iconstyle : TextStyle = {
         fontFamily: outlined ? "MaterialIconsOutlined-Regular" : "MaterialIcons-Regular",
         fontSize:  Number(size ?? 24),
-        color: color,
     }
     return (<Text style={[iconstyle, style]}>{value}</Text>);
 }

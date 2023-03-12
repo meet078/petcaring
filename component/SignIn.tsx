@@ -1,59 +1,62 @@
 import { NavigationProp } from "@react-navigation/native"
 import type { NativeStackScreenProps } from "@react-navigation/native-stack"
-import { FC } from "react"
 import Text from "./utils/custom/Text"
 import {
-    View,
-    KeyboardAvoidingView,
-    TextInput,
     StyleSheet,
-    Platform,
     TouchableWithoutFeedback,
-    Button,
     Keyboard,
+    View,
 } from 'react-native';
 
-const SignIn = ({}):JSX.Element => {
+import InputText from "./utils/custom/InputText";
+import { useState } from "react";
+import IconInputText from "./utils/custom/IconInputText";
+import Button from "./utils/custom/Button";
+import CustomView from "./utils/custom/CustomView";
+const SignIn = ({ }): JSX.Element => {
+
+    const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+        },
+        inner: {
+            padding: 24,
+            flex: 1,
+            justifyContent: 'space-around',
+
+        },
+        header: {
+            fontSize: 36,
+            marginBottom: 10,
+
+        },
+        btnContainer: {
+            marginTop: 10,
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        
+    });
+    const [emailError, setEmailError] = useState("hello");
+    const [passwordError, setPasswordError] = useState("password");
+    const [showPassword, setShowPassword] = useState(false);
     return (
-        <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={styles.container}>
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View style={styles.inner}>
-                    <Text style={styles.header}>PetCaring</Text>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.inner}>
+                <View>
+                    <Text style={styles.header}>Pet Caring</Text>
                     <Text>Sign In your account</Text>
-                    <TextInput placeholder="Username" style={styles.textInput} />
-                    <View style={styles.btnContainer}>
-                        <Button title="Submit" onPress={() => null} />
-                    </View>
                 </View>
-            </TouchableWithoutFeedback>
-        </KeyboardAvoidingView>
+                <View>
+                    <InputText placeholder="Email" error={emailError} />
+                    <IconInputText icon={showPassword?"visibility_off":"visibility"} placeholder="Password" error={passwordError} password={!showPassword} onIconPress={() => setShowPassword(!showPassword)} />
+                </View>
+                <View style={styles.btnContainer}>
+                    <Button value="Sign In" style={{paddingHorizontal: 20}}/>
+                    <Button value="Don't have account?" color="blue" backgroundColor="transparent" rootstyle={{marginTop: 10}} textstyle={{textDecorationLine: "underline"}}/>
+                </View>
+            </View>
+        </TouchableWithoutFeedback>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    inner: {
-        padding: 24,
-        flex: 1,
-        justifyContent: 'space-around',
-    },
-    header: {
-        fontSize: 36,
-        marginBottom: 48,
-    },
-    textInput: {
-        height: 40,
-        borderColor: '#000000',
-        borderBottomWidth: 1,
-        marginBottom: 36,
-    },
-    btnContainer: {
-        backgroundColor: 'white',
-        marginTop: 12,
-    },
-});
 export default SignIn;

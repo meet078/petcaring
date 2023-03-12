@@ -1,12 +1,14 @@
 import React, { FC, useRef } from 'react';
 import {
     ScrollView,
-    View,
     ImageBackground,
     Animated,
     useWindowDimensions,
+    View,
+    StyleSheet,
+    StyleProp,
+    ViewStyle,
 } from 'react-native';
-import {normalDot, card, indicatorContainer, scrollContainer, sliderimage } from '../../style/Slider';
 export interface sliderprops{
     images:{
         id: number,
@@ -15,12 +17,41 @@ export interface sliderprops{
 }
 
 const Slider:FC<sliderprops> = ({images}) => {
+    const styles = StyleSheet.create({
+        scrollContainer: {
+            height: 230,
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingBottom: 10,
+        },
+        card: {
+            flex: 1,
+            marginVertical: 4,
+            marginHorizontal: 16,
+            borderRadius: 5,
+            overflow: 'hidden',
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+        normalDot: {
+            height: 8,
+            width: 8,
+            borderRadius: 4,
+            backgroundColor: 'silver',
+            marginHorizontal: 4,
+        },
+        indicatorContainer: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+    });
+    const sliderimage = (windowWidth: number):StyleProp<ViewStyle> => ({ width: windowWidth, height: 200 });
     const scrollX = useRef(new Animated.Value(0)).current;
 
     const { width: windowWidth } = useWindowDimensions();
-
     return (
-        <View style={scrollContainer}>
+        <View style={styles.scrollContainer}>
             <ScrollView
                 horizontal={true}
                 pagingEnabled
@@ -39,13 +70,13 @@ const Slider:FC<sliderprops> = ({images}) => {
                 {images.map((image, imageIndex) => {
                     return (
                         <View style={sliderimage(windowWidth) } key={imageIndex}>
-                            <ImageBackground source={{ uri: image.url }} style={card}>
+                            <ImageBackground source={{ uri: image.url }} style={styles.card}>
                             </ImageBackground>
                         </View>
                     );
                 })}
             </ScrollView>
-            <View style={indicatorContainer}>
+            <View style={styles.indicatorContainer}>
                 {images.map((image, imageIndex) => {
                     const width = scrollX.interpolate({
                         inputRange: [
@@ -59,7 +90,7 @@ const Slider:FC<sliderprops> = ({images}) => {
                     return (
                         <Animated.View
                             key={imageIndex}
-                            style={[normalDot, { width }]}
+                            style={[styles.normalDot, { width }]}
                         />
                     );
                 })}

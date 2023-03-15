@@ -14,6 +14,9 @@ export interface buttonprops {
 const Button: FC<buttonprops> = ({ value, onPress, style, backgroundColor,color, rootstyle, textstyle}) => {
 
     const appState = useContext(AppContext);
+    let texts:{[index: string]: string|undefined}= {}
+    if(color)
+        texts["color"] = color
     const customStyle = StyleSheet.create({
         buttonRoot: {
             borderRadius: 10,
@@ -26,7 +29,10 @@ const Button: FC<buttonprops> = ({ value, onPress, style, backgroundColor,color,
             alignItems: "center",
         },
         text:{
-            color: color,
+            ...texts,
+            
+            fontWeight: "bold",
+            textTransform: "uppercase",
         }
     });
     return <View style={[customStyle.buttonRoot, rootstyle]}>

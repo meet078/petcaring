@@ -1,5 +1,5 @@
 import { FC, useContext, useState } from "react";
-import { StyleProp, StyleSheet, TextInput, TextStyle, View } from "react-native"
+import { StyleProp, StyleSheet, TextInput, TextStyle, View, ViewStyle } from "react-native"
 import AppContext from "../../../context/AppContext";
 import IconButton from "./IconButton";
 import Text from "./Text";
@@ -10,16 +10,18 @@ export interface iconinputtextprops {
     placeholder?: string,
     onChangeText?: (arg0: string) => void,
     style?: StyleProp<TextStyle>,
+    containerStyle?: StyleProp<ViewStyle>,
     error?: string | null,
     password?: boolean,
     onIconPress?: () => void
 }
-const IconInputText: FC<iconinputtextprops> = ({onIconPress, defaultValue, icon, value, error, onChangeText, style, placeholder, password }) => {
+const IconInputText: FC<iconinputtextprops> = ({onIconPress, containerStyle, defaultValue, icon, value, error, onChangeText, style, placeholder, password }) => {
     const appState = useContext(AppContext);
     const [borderFocus, setBorderFocus] = useState(false);
     const customstyle = StyleSheet.create({
         root:{
-            margin: 5,
+            marginVertical: 10,
+            marginHorizontal: 5
         },
         inputcontainer: {
             flexDirection: "row",
@@ -29,10 +31,11 @@ const IconInputText: FC<iconinputtextprops> = ({onIconPress, defaultValue, icon,
             paddingEnd: 5,
             justifyContent: "space-between",
             alignItems: "center",
+            height: 50,
         },
         inputtext: {
             flex: 1,
-            padding: 10,
+            paddingHorizontal: 10,
             marginEnd: 5,
             fontFamily: "Ubuntu",
             color: appState?.colorValue.text,
@@ -43,7 +46,7 @@ const IconInputText: FC<iconinputtextprops> = ({onIconPress, defaultValue, icon,
             paddingStart: 12,
         }
     });
-    return <View style={customstyle.root}>
+    return <View style={[customstyle.root, containerStyle]}>
         <View style={customstyle.inputcontainer}>
             <TextInput defaultValue={defaultValue} secureTextEntry={password} placeholder={placeholder} onBlur={() => setBorderFocus(false)} onFocus={() => setBorderFocus(true)} value={value} onChangeText={onChangeText} style={[customstyle.inputtext, style]} placeholderTextColor={appState?.colorValue.borderColor} />
             <IconButton icon={{value: icon}} onPress={onIconPress}/>

@@ -4,16 +4,20 @@ import AppContext from '../../context/AppContext';
 import CustomView from './custom/CustomView';
 import Text from './custom/Text';
 import IconButton from './custom/IconButton';
+import Button from './custom/Button';
 
 export interface appbarprops {
+    back?: boolean,
     title: string,
+    backpress?: ()=>void,
     actionbuttons?: {
+        value?: string,
         label?: string,
-        icon: string,
+        icon?: string,
         onPress?: () => void
     }[]
 }
-const AppBar: FC<appbarprops> = ({ title, actionbuttons }) => {
+const AppBar: FC<appbarprops> = ({ title, actionbuttons,backpress, back }) => {
     const styles = StyleSheet.create({
         appbar: {
             //height appbar 
@@ -45,12 +49,27 @@ const AppBar: FC<appbarprops> = ({ title, actionbuttons }) => {
     const toggleSwitch = () => appState?.changeMode();
     return (
         <CustomView style={styles.appbar}>
-            <Text style={styles.appbarTitle}>Pet Caring</Text>
+            
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                {
+                    back &&
+                    <View style={{ marginEnd: 10 }}>
+                        <IconButton icon={{ value: "arrow_back" }} onPress={backpress}/>
+                    </View>
+                }
+                <Text style={styles.appbarTitle}>{title}</Text>
+            </View>
             <View style={styles.appbarMenu}>
                 {
                     actionbuttons?.map(button => {
-                        return <IconButton key={button.icon} icon={{ value: button.icon }} onPress={button.onPress} />
+                        return button.value ?
+                            <Button key={button.value} value={button.value} backgroundColor="transparent" textstyle={{color: "orange"}}/>
+                            :
+                            <IconButton key={button.icon} icon={{ value: button.icon! }} onPress={button.onPress} />
                     })
+                }
+                {
+
                 }
                 <Switch
                     trackColor={{ false: '#767577', true: '#81b0ff' }}

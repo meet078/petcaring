@@ -9,14 +9,14 @@ import {
     StyleProp,
     ViewStyle,
 } from 'react-native';
-export interface sliderprops{
-    images:{
+export interface sliderprops {
+    images: {
         id: number,
         url: string,
     }[]
 }
 
-const Slider:FC<sliderprops> = ({images}) => {
+const Slider: FC<sliderprops> = ({ images }) => {
     const styles = StyleSheet.create({
         scrollContainer: {
             height: 230,
@@ -46,7 +46,7 @@ const Slider:FC<sliderprops> = ({images}) => {
             justifyContent: 'center',
         },
     });
-    const sliderimage = (windowWidth: number):StyleProp<ViewStyle> => ({ width: windowWidth, height: 200 });
+    const sliderimage = (windowWidth: number): StyleProp<ViewStyle> => ({ width: windowWidth, height: 200 });
     const scrollX = useRef(new Animated.Value(0)).current;
 
     const { width: windowWidth } = useWindowDimensions();
@@ -69,7 +69,7 @@ const Slider:FC<sliderprops> = ({images}) => {
                 scrollEventThrottle={1}>
                 {images.map((image, imageIndex) => {
                     return (
-                        <View style={sliderimage(windowWidth) } key={imageIndex}>
+                        <View style={sliderimage(windowWidth)} key={imageIndex}>
                             <ImageBackground source={{ uri: image.url }} style={styles.card}>
                             </ImageBackground>
                         </View>

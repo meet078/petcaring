@@ -10,10 +10,7 @@ import {
     ViewStyle,
 } from 'react-native';
 export interface sliderprops {
-    images: {
-        id: number,
-        url: string,
-    }[]
+    images: string [],
 }
 
 const Slider: FC<sliderprops> = ({ images }) => {
@@ -70,7 +67,7 @@ const Slider: FC<sliderprops> = ({ images }) => {
                 {images.map((image, imageIndex) => {
                     return (
                         <View style={sliderimage(windowWidth)} key={imageIndex}>
-                            <ImageBackground source={{ uri: image.url }} style={styles.card}>
+                            <ImageBackground source={{ uri: image }} style={styles.card}>
                             </ImageBackground>
                         </View>
                     );

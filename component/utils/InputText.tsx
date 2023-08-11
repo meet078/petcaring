@@ -1,6 +1,6 @@
 import { FC, forwardRef, LegacyRef, MutableRefObject, RefObject, useContext, useRef, useState } from "react";
 import { KeyboardTypeOptions, NativeSyntheticEvent, StyleProp, StyleSheet, TextInput, TextInputKeyPressEventData, TextStyle, View } from "react-native"
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 import Text from "./Text";
 export interface inputtextprops {
     defaultValue?: string,
@@ -22,16 +22,15 @@ const InputText = forwardRef<TextInput, inputtextprops>(({ onKeyPress, defaultVa
         inputcontainer: {
             marginVertical: 10,
             marginHorizontal: 5,
-            height: 50,
         },
         inputtext: {
             borderRadius: 10,
             borderColor: error ? "red" : borderFocus ? "orange" : appState?.colorValue.borderColor,
             paddingHorizontal: 10,
             fontFamily: "Ubuntu",
+            height: 50,
             color: appState?.colorValue.text,
             borderWidth: 2,
-            flex: 1
         },
         errorText: {
             marginTop: 5,

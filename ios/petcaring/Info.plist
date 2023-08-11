@@ -59,6 +59,9 @@
 		<string>MaterialIconsTwoTone-Regular.otf</string>
 		<string>MaterialIcons-Regular.ttf</string>
 		<string>Ubuntu.ttf</string>
+		<string>Ubuntu-Bold.ttf</string>
+		<string>Ubuntu-BoldItalic.ttf</string>
+		<string>Ubuntu-Italic.ttf</string>
 	</array>
 </dict>
 </plist>

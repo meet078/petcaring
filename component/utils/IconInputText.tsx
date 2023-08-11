@@ -1,6 +1,6 @@
 import { FC, useContext, useState } from "react";
 import { StyleProp, StyleSheet, TextInput, TextStyle, View, ViewStyle } from "react-native"
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 import IconButton from "./IconButton";
 import Text from "./Text";
 export interface iconinputtextprops {

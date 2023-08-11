@@ -26,6 +26,9 @@
 		37B17339D4DE45ECB7895123 /* MaterialIconsSharp-Regular.codepoints in Resources */ = {isa = PBXBuildFile; fileRef = D8B4315E42C74F1384723C2E /* MaterialIconsSharp-Regular.codepoints */; };
 		78D569F0EEB64F9280921B28 /* MaterialIconsTwoTone-Regular.codepoints in Resources */ = {isa = PBXBuildFile; fileRef = C990D629D0214467A6661BE6 /* MaterialIconsTwoTone-Regular.codepoints */; };
 		354824C660714DCFA792D18D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE74BED6988C46819F436588 /* README.md */; };
+		229777E0206E44C79A5E9C71 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C130A26B50584FF4A15702DB /* Ubuntu-Bold.ttf */; };
+		F579A80A7358456A96E46C67 /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86FAAA7E54A7409B8B626692 /* Ubuntu-BoldItalic.ttf */; };
+		54C40E95422740E4B528C3CB /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2128CA75F44B47B88B3F8AD0 /* Ubuntu-Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		D8B4315E42C74F1384723C2E /* MaterialIconsSharp-Regular.codepoints */ = {isa = PBXFileReference; name = "MaterialIconsSharp-Regular.codepoints"; path = "../assets/fonts/MaterialIconsSharp-Regular.codepoints"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C990D629D0214467A6661BE6 /* MaterialIconsTwoTone-Regular.codepoints */ = {isa = PBXFileReference; name = "MaterialIconsTwoTone-Regular.codepoints"; path = "../assets/fonts/MaterialIconsTwoTone-Regular.codepoints"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		CE74BED6988C46819F436588 /* README.md */ = {isa = PBXFileReference; name = "README.md"; path = "../assets/fonts/README.md"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C130A26B50584FF4A15702DB /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Bold.ttf"; path = "../assets/fonts/Ubuntu-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		86FAAA7E54A7409B8B626692 /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-BoldItalic.ttf"; path = "../assets/fonts/Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2128CA75F44B47B88B3F8AD0 /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Italic.ttf"; path = "../assets/fonts/Ubuntu-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,9 @@
 				D8B4315E42C74F1384723C2E /* MaterialIconsSharp-Regular.codepoints */,
 				C990D629D0214467A6661BE6 /* MaterialIconsTwoTone-Regular.codepoints */,
 				CE74BED6988C46819F436588 /* README.md */,
+				C130A26B50584FF4A15702DB /* Ubuntu-Bold.ttf */,
+				86FAAA7E54A7409B8B626692 /* Ubuntu-BoldItalic.ttf */,
+				2128CA75F44B47B88B3F8AD0 /* Ubuntu-Italic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -301,6 +310,9 @@
 				37B17339D4DE45ECB7895123 /* MaterialIconsSharp-Regular.codepoints in Resources */,
 				78D569F0EEB64F9280921B28 /* MaterialIconsTwoTone-Regular.codepoints in Resources */,
 				354824C660714DCFA792D18D /* README.md in Resources */,
+				229777E0206E44C79A5E9C71 /* Ubuntu-Bold.ttf in Resources */,
+				F579A80A7358456A96E46C67 /* Ubuntu-BoldItalic.ttf in Resources */,
+				54C40E95422740E4B528C3CB /* Ubuntu-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

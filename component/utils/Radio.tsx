@@ -1,6 +1,6 @@
 import { FC, useContext, useState } from "react";
 import { StyleProp, StyleSheet, TouchableNativeFeedback, View, ViewStyle } from "react-native";
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 import Icon from "./Icon";
 import Text from "./Text";
 

@@ -1,6 +1,6 @@
 import { FC, useContext } from "react";
 import { StyleProp, Button as NativeButton, TouchableNativeFeedback, View, ViewStyle, StyleSheet, TextStyle } from "react-native";
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 import Text from "./Text";
 export interface buttonprops {
     value: string,
@@ -31,7 +31,7 @@ const Button: FC<buttonprops> = ({ value, onPress, style, backgroundColor,color,
         text:{
             ...texts,
             
-            fontWeight: "bold",
+            fontFamily: "Ubuntu-Bold",
             textTransform: "uppercase",
         }
     });

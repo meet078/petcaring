@@ -1,10 +1,10 @@
 import { FC, useContext } from "react";
 import { ColorValue, StyleProp, Text, TextStyle } from "react-native";
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 export interface IconProps {
     value: string,
     size?: Number,
-    color?: ColorValue,
+    color?: string,
     outlined?: Boolean,
     style?: StyleProp<TextStyle>
 }

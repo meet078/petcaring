@@ -1,6 +1,6 @@
 import { Attributes, FC, Key, ReactNode, useContext } from "react";
 import { StyleProp, ViewStyle, View} from "react-native";
-import AppContext from "../../../context/AppContext";
+import AppContext from "../../context/AppContext";
 export interface viewprops{
     children?: ReactNode,
     style?: StyleProp<ViewStyle>

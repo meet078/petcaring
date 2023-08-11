@@ -1,10 +1,10 @@
 import React, { FC, useContext, useState } from 'react';
 import { StyleSheet, Switch, View } from 'react-native';
 import AppContext from '../../context/AppContext';
-import CustomView from './custom/CustomView';
-import Text from './custom/Text';
-import IconButton from './custom/IconButton';
-import Button from './custom/Button';
+import CustomView from './CustomView';
+import Text from './Text';
+import IconButton from './IconButton';
+import Button from './Button';
 
 export interface appbarprops {
     back?: boolean,
@@ -25,10 +25,6 @@ const AppBar: FC<appbarprops> = ({ title, actionbuttons,backpress, back }) => {
             // add padding
             paddingHorizontal: 10,
             paddingVertical: 5,
-            // add shadow
-            shadowOpacity: 0.4,
-            shadowRadius: 5,
-            elevation: 5,
             // set layout and align child item
             flexDirection: "row",
             justifyContent: "space-between",
@@ -38,7 +34,7 @@ const AppBar: FC<appbarprops> = ({ title, actionbuttons,backpress, back }) => {
             borderBottomStartRadius: 10,
         },
         appbarTitle: {
-            fontWeight: "bold",
+            fontFamily: "Ubuntu-Bold",
             fontSize: 20
         },
         appbarMenu: {
